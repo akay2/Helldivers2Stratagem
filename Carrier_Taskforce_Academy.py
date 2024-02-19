@@ -114,6 +114,8 @@ class Windows:
                     path = "images/s_g.png"
                 case 'a':
                     path = "images/a_g.png"
+                case _:
+                    raise Exception("Invalid Argument in Command Array. Check source code!")
             self.images[i] = tk.PhotoImage(file=path)
         for i in range(len(self.labels)):
             self.labels[i].config(image=self.images[i])
