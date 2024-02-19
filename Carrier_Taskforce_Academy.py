@@ -10,7 +10,8 @@ class Carrier:
     eagle_napalm = ["Napalm Airstrike", 'w', 'd', 's', 'w']  # 50%
     eagle_rockets = ["Rocket Pods", 'w', 'd', 'w', 'a']  # 100%
     eagle_500kg = ["500KG BOMB", 'w', 'd', 's', 's', 's']  # 100%
-    eagle_options = [eagle_strafing_run, eagle_airstrike, eagle_cluster_bomb, eagle_napalm, eagle_rockets, eagle_500kg]
+    eagle_rearm = ["Eagle Rearm", 'w', 'w', 'a', 'w', 'd']  # 50%
+    eagle_options = [eagle_strafing_run, eagle_airstrike, eagle_cluster_bomb, eagle_napalm, eagle_rockets, eagle_500kg, eagle_rearm]
 
     def __init__(self):
         self.next = self.eagle_options[random.randint(0, len(self.eagle_options) - 1)]
@@ -32,6 +33,8 @@ class Carrier:
                 return 4
             case "500KG BOMB":
                 return 5
+            case "Eagle Rearm":
+                return 6
 
 
 def letter_to_index(letter):
@@ -81,7 +84,8 @@ class Windows:
                              tk.PhotoImage(file="images/cluster.png"),
                              tk.PhotoImage(file="images/napalm.png"),
                              tk.PhotoImage(file="images/rockets.png"),
-                             tk.PhotoImage(file="images/500kg.png")]
+                             tk.PhotoImage(file="images/500kg.png"),
+                             tk.PhotoImage(file="images/rearm.png")]
         self.x_off = (self.root.winfo_screenwidth() - self.width) // 2
         self.y_off = (self.root.winfo_screenheight() - self.height) // 2
         self.root.geometry(f"{self.width}x{self.height}+{self.x_off}+{self.y_off}")
