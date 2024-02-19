@@ -4,12 +4,12 @@ import tkinter as tk
 
 
 class Carrier:
-    eagle_strafing_run = ["Strafing Run", 'w', 'd', 'd']  # 50%
-    eagle_airstrike = ["Airstrike", 'w', 'd', 'w', 's']  # 0%
-    eagle_cluster_bomb = ["Cluster Bombs", 'w', 'd', 's', 's', 'd']  # 50%
+    eagle_strafing_run = ["Strafing Run", 'w', 'd', 'd']  # 100%
+    eagle_airstrike = ["Airstrike", 'w', 'd', 's', 'd']  # 100%
+    eagle_cluster_bomb = ["Cluster Bombs", 'w', 'd', 's', 's', 'd']  # 100%
     eagle_napalm = ["Napalm Airstrike", 'w', 'd', 's', 'w']  # 50%
-    eagle_rockets = ["Rocket Pods", 'w', 'd', 'w', 'a']  # 50%
-    eagle_500kg = ["500KG BOMB", 'w', 'd', 's', 's', 's']  # 50%
+    eagle_rockets = ["Rocket Pods", 'w', 'd', 'w', 'a']  # 100%
+    eagle_500kg = ["500KG BOMB", 'w', 'd', 's', 's', 's']  # 100%
     eagle_options = [eagle_strafing_run, eagle_airstrike, eagle_cluster_bomb, eagle_napalm, eagle_rockets, eagle_500kg]
 
     def __init__(self):
