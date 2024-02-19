@@ -101,6 +101,7 @@ class Windows:
         btnframe.pack(pady=5)
 
         self.root.title("Carrier Taskforce Academy")
+        self.root.focus_force()
 
     def green_re_roll(self):
         for i in range(len(self.carrier.next) - 1):
@@ -125,7 +126,6 @@ class Windows:
         self.carrier.re_roll()
         self.current_idx = 0
         self.create_root()
-        self.root.focus_force()
 
     def shake_window(self):
         x0, y0 = self.root.winfo_x(), self.root.winfo_y()
