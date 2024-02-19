@@ -95,7 +95,7 @@ class Windows:
 
         btnframe = tk.Frame(self.root)
         tk.Button(btnframe, text="End me", font=('Arial', 20), command=self.root.destroy).grid(row=0, column=0)
-        tk.Button(btnframe, text="Next", font=('Arial', 20), command=self.re_roll).grid(row=0, column=1)
+        # tk.Button(btnframe, text="Next", font=('Arial', 20), command=self.re_roll).grid(row=0, column=1)
         btnframe.pack(pady=5)
 
         self.root.title("Carrier Taskforce Academy")
@@ -156,7 +156,11 @@ class Windows:
             self.shake_window()
 
 
-if __name__ == '__main__':
+def start_carrier():
     w = Windows()
     root = w.get_window()
     root.mainloop()
+
+
+if __name__ == '__main__':
+    start_carrier()
