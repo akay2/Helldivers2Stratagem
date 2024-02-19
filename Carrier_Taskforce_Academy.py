@@ -69,6 +69,10 @@ class Windows:
         self.root.bind("<s>", self.pressed)
         self.root.bind("<a>", self.pressed)
         self.root.bind("<d>", self.pressed)
+        self.root.bind("<W>", self.pressed)
+        self.root.bind("<S>", self.pressed)
+        self.root.bind("<A>", self.pressed)
+        self.root.bind("<D>", self.pressed)
         self.images = [tk.PhotoImage(file="images/empty.png"), tk.PhotoImage(file="images/empty.png"),
                        tk.PhotoImage(file="images/empty.png"), tk.PhotoImage(file="images/empty.png"),
                        tk.PhotoImage(file="images/empty.png")]
@@ -87,7 +91,6 @@ class Windows:
         self.labels = []
         frame = tk.Frame(self.root)
         for i in range(len(self.carrier.next) - 1):
-            # tk.Label(frame, image=images[letter_to_index(carrier.next[i + 1])]).grid(row=0, column=i)
             label = tk.Label(frame, image=self.images[i])
             label.grid(row=0, column=i)
             self.labels.append(label)
@@ -95,7 +98,6 @@ class Windows:
 
         btnframe = tk.Frame(self.root)
         tk.Button(btnframe, text="End me", font=('Arial', 20), command=self.root.destroy).grid(row=0, column=0)
-        # tk.Button(btnframe, text="Next", font=('Arial', 20), command=self.re_roll).grid(row=0, column=1)
         btnframe.pack(pady=5)
 
         self.root.title("Carrier Taskforce Academy")
@@ -141,8 +143,9 @@ class Windows:
 
     def pressed(self, event):
         # <KeyPress event send_event=True state=Mod1 keysym=w keycode=87 char='w' x=287 y=107>
-        if event.char == self.carrier.next[self.current_idx + 1]:
-            self.images[self.current_idx] = tk.PhotoImage(file="images/" + event.char + ".png")
+        c = event.char.lower()
+        if c == self.carrier.next[self.current_idx + 1]:
+            self.images[self.current_idx] = tk.PhotoImage(file="images/" + c + ".png")
             self.labels[self.current_idx].config(image=self.images[self.current_idx])
             self.current_idx += 1
             if self.current_idx >= len(self.carrier.next) - 1:
